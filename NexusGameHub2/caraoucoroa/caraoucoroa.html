@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara ou Coroa — ARCADE ZONE</title>
+  <link rel="stylesheet" href="gameshared.css">
+  <link rel="stylesheet" href="caraoucoroa.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<nav class="navbar">
+  <a href="../parte2.html" class="nb-back">
+    <span class="arrow">◂</span> MENU
+  </a>
+  <div class="nb-title">🪙 CARA OU COROA</div>
+  <a href="../parte2.html" class="nb-brand">◈ ARCADE</a>
+</nav>
+
+<main>
+  <div class="page-hd">
+    <div class="hd-eyebrow">JOGO 03 — CLÁSSICO</div>
+    <h1>CARA OU COROA</h1>
+    <div class="hd-sub">◆ ESCOLHA SEU LADO E TORÇA ◆</div>
+  </div>
+
+  <!-- SCOREBOARD -->
+  <div class="scoreboard" data-label="◈ PLACAR ◈">
+    <div class="sc-cell">
+      <span class="sc-val v-win"   id="scWins">0</span>
+      <span class="sc-lbl">Vitórias</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-total" id="scTotal">0</span>
+      <span class="sc-lbl">Partidas</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-lose"  id="scLoses">0</span>
+      <span class="sc-lbl">Derrotas</span>
+    </div>
+  </div>
+
+  <!-- STREAK -->
+  <div class="streak-bar">
+    <div class="streak-item" id="streakBar">
+      🔥 Sequência: <strong id="streakCur">0</strong>
+    </div>
+    <div class="streak-item">
+      ⭐ Recorde: <strong id="streakMax">0</strong>
+    </div>
+  </div>
+
+  <!-- PICK SECTION -->
+  <div class="pick-label">▸ ESCOLHA SEU LADO ◂</div>
+  <div class="pick-grid">
+    <button class="pick-btn btn-cara" id="caraBtn" onclick="choose('cara')">
+      <span class="pick-icon">😊</span>
+      <span class="pick-name">Cara</span>
+      <span class="pick-odds">50% de chance</span>
+    </button>
+    <button class="pick-btn btn-coroa" id="coroaBtn" onclick="choose('coroa')">
+      <span class="pick-icon">👑</span>
+      <span class="pick-name">Coroa</span>
+      <span class="pick-odds">50% de chance</span>
+    </button>
+  </div>
+
+  <!-- COIN STAGE -->
+  <div class="coin-stage">
+    <div class="coin-wrap">
+      <div class="coin" id="coin">
+        <div class="coin-face" id="coinFace">😊</div>
+        <div class="coin-back" id="coinBack">👑</div>
+      </div>
+    </div>
+    <div class="coin-out-lbl">RESULTADO DA MOEDA</div>
+    <div id="coinOutName">—</div>
+  </div>
+
+  <!-- RESULT BANNER -->
+  <div class="result-banner" id="resultBanner"></div>
+
+  <!-- RESET -->
+  <button class="reset-btn" onclick="resetScore()">↺ &nbsp; RESETAR PLACAR</button>
+
+  <!-- HISTORY -->
+  <div class="history-wrap">
+    <div class="history-hd">HISTÓRICO DE PARTIDAS</div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+  <!-- BOTÃO VOLTAR -->
+  <a href="../parte2.html" class="reset-btn" style="display:block; margin:28px auto 50px; text-decoration:none; text-align:center;">Voltar ao Menu de Jogos</a>
+</main>
+
+<script src="caraoucoroa.js"></script>
+</body>
+</html>

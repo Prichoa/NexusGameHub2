@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS GAME HUB</title>
+  <link rel="stylesheet" href="styleIndex.css">
+</head>
+<body>
+<a href="sobre.html" class="about-button" aria-label="Abrir página Sobre">SOBRE</a>
+
+<!-- ░░ LAYERS DE FUNDO ░░ -->
+<canvas id="bgCanvas"></canvas>
+<div id="gridFloor"></div>
+<div class="noise"></div>
+<div class="vignette"></div>
+
+
+<div id="entrance">
+
+  <!-- orbs de luz ambiente -->
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+
+  <!-- logo -->
+  <div class="ent-logo-wrap">
+    <p class="ent-eyebrow">
+      <span class="dot"></span> Bem Vindo ao
+      <span class="dot"></span>
+    </p>
+
+    <h1 class="ent-logo" data-text="NEXUS GAME HUB">
+      NEXUS GAME HUB
+    </h1>
+  </div>
+
+  <!-- separador animado -->
+  <div class="ent-rule">
+    <span class="ent-rule-gem"></span>
+  </div>
+
+  <!-- botão -->
+  <button class="start-btn" id="startBtn">
+    <span class="start-btn__inner">
+      <svg class="start-btn__icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+     CLIQUE QUALQUER TECLA PARA INICIAR!
+    </span>
+    <span class="start-btn__glow"></span>
+  </button>
+
+  <!-- rodapé da entrada -->
+  <footer class="ent-footer">
+    <div class="ent-stat"><span>03</span> JOGOS</div>
+    <div class="ent-stat">HTML5 <span>+</span> CSS3 <span>+</span> JS</div>
+    <div class="ent-sep">·</div>
+    <div class="ent-stat">GAMES <span class="online">OFFLINE</span></div>
+  </footer>
+
+</div>
+
+<div id="app">
+
+</div><!-- /app -->
+
+<script src="index.js"></script>
+</body>
+</html>
+  

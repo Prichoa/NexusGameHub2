@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Nexus Game Hub</title>
+  <link rel="stylesheet" href="styleIndex.css">
+  <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <div class="noise"></div>
+  <div class="vignette"></div>
+
+  <nav class="navbar">
+    <a href="index.html" class="nb-back">
+      <span class="arrow">◂</span> VOLTAR
+    </a>
+    <div class="nb-title">SOBRE O PROJETO</div>
+    <a href="index.html" class="nb-brand">NEXUS</a>
+  </nav>
+
+  <main class="about-main">
+    <section class="about-hero">
+      <p class="about-tag">Sobre o Nexus Game Hub</p>
+      <h1>Como o Projeto foi Desenvolvido</h1>
+      <p class="about-copy">O menu principal foi criado utilizando HTML e CSS para proporcionar uma navegação intuitiva e acessível, inspirado nos sites de jogos Poki e Friv, que oferecem uma vasta gama de jogos divertidos e fáceis de jogar.</p>
+    </section>
+
+
+
+    <section class="about-grid">
+      <article class="dev-card">
+        <div class="card-head">
+          <span class="card-role">Erika</span>
+          <span class="card-game">Cara ou Coroa</span>
+        </div>
+        <p>Desenvolvi o HTML estruturando os elementos interativos, utilizando recursos online para otimizar o layout e ferramentas de IA para refinar a lógica do jogo.</p>
+      </article>
+
+      <article class="dev-card">
+        <div class="card-head">
+          <span class="card-role">Kelvyn</span>
+          <span class="card-game">Dados</span>
+        </div>
+        <p>Construí o código baseando-me em tutoriais de programação web e assistentes virtuais que ajudaram na implementação das funcionalidades dinâmicas.</p>
+      </article>
+
+      <article class="dev-card">
+        <div class="card-head">
+          <span class="card-role">Lucas</span>
+          <span class="card-game">Jokenpo</span>
+        </div>
+        <p>Criei o projeto aproveitando documentações de desenvolvimento front-end e inteligências artificiais para gerar ideias inovadoras no código.</p>
+      </article>
+    </section>
+
+    <section class="about-summary">
+      <h2>Visão geral técnica</h2>
+      <p>O projeto segue uma arquitetura de front-end modular: cada jogo tem sua própria pasta com HTML, CSS e JS. A página inicial fica em `Main/index.html` e faz a ponte entre as arenas. A nova página “Sobre” explica o papel de cada desenvolvedor e os motivos de cada escolha técnica.</p>
+      <ul>
+        <li><strong>Pasta:</strong> cada jogo mora em sua própria pasta (Dados, caraoucoroa, jokenpo) para organizar melhor os arquivos.</li>
+        <li><strong>HTML:</strong> estrutura da página. Define os botões, placar, histórico e tudo que você vê na tela.</li>
+        <li><strong>CSS:</strong> beleza e aparência. Deixa as coisas coloridas, com animações e responsivas (funciona em celular, tablet, computador).</li>
+        <li><strong>JavaScript:</strong> a lógica do jogo. Calcula quem venceu, atualiza o placar, guarda no `localStorage`.</li>
+        <li><strong>localStorage:</strong> um lugar seguro no navegador para guardar dados do usuário, mesmo depois que ele sai do site.</li>
+        <li><strong>Tema compartilhado:</strong> a página `gameshared.css` tem estilos que todos os jogos usam (fontes, cores, placar padrão), evitando repetir código.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

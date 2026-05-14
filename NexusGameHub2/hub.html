@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARENAS — NEXUS GAME HUB</title>
+    <link rel="stylesheet" href="parte2.css">
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="#" class="nb-logo">
+        <svg class="nb-logo__gem" viewBox="0 0 20 20" fill="none">
+          <polygon points="10,1 19,7 19,13 10,19 1,13 1,7" stroke="currentColor" stroke-width="1.2" fill="rgba(191,0,255,.15)"/>
+          <circle cx="10" cy="10" r="3" fill="currentColor"/>
+        </svg>
+        <span>NEXUS <strong>GAME HUB</strong></span>
+      </a>
+
+      <ul class="nb-links">
+        <li><a href="jokenpo/Jokenpo.html"><span class="nb-link__icon"></span> Jokenpô</a></li>
+        <li><a href="Dados/dados.html"><span class="nb-link__icon"></span> Dados</a></li>
+        <li><a href="caraoucoroa/caraoucoroa.html"><span class="nb-link__icon"></span> Cara-Coroa</a></li>
+      </ul>
+
+      <div class="nb-right"><div class="nb-live"><span class="live-dot"></span> OFFLINE</div></div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg-line hero__bg-line--1"></div>
+      <div class="hero__bg-line hero__bg-line--2"></div>
+      <div class="hero__bg-line hero__bg-line--3"></div>
+
+      <div class="hero__content">
+        <h2 class="hero__title">SELECIONE<br><em>UM JOGO</em></h2>
+        <p class="hero__sub">Desafie a CPU! Bata seus recordes e domine todas as arenas.</p>
+
+        <div class="hero__stats">
+          <div class="hstat"><span class="hstat__val" data-count="3">3</span><span class="hstat__lbl">Arenas</span></div>
+          <div class="hstat__divider"></div>
+          <div class="hstat"><span class="hstat__val hstat__val--t" id="statWins">0</span><span class="hstat__lbl">Vitórias</span></div>
+          <div class="hstat__divider"></div>
+          <div class="hstat"><span class="hstat__val hstat__val--g" id="statGames">0</span><span class="hstat__lbl">Partidas</span></div>
+        </div>
+      </div>
+
+      <div class="hero__deco" aria-hidden="true">
+        <div class="hero__circle hero__circle--1"></div>
+        <div class="hero__circle hero__circle--2"></div>
+        <div class="hero__circle hero__circle--3"></div>
+        <span class="hero__big-icon">🎮</span>
+      </div>
+    </section>
+
+    <!-- GAMES GRID -->
+    <section class="games-section">
+      <div class="games-section__head">
+        <div class="gs-rule"></div>
+        <span class="gs-label">ARENAS DISPONÍVEIS</span>
+        <div class="gs-rule"></div>
+      </div>
+
+      <div class="cards-grid">
+        <a href="jokenpo/Jokenpo.html" class="card card--purple">
+          <div class="card__top"><div class="card__top-glow"></div><div class="card__rings"><span></span><span></span></div><div class="card__emoji" role="img">✊</div><span class="card__badge">ESTRATÉGIA</span><span class="card__num">01</span></div>
+          <div class="card__body"><h3 class="card__title">Jokenpô</h3><p class="card__desc">Pedra, Papel ou Tesoura! Leia a CPU, escolha sua jogada e acumule vitórias no placar.</p>
+            <div class="card__tags"><span>VS&nbsp;CPU</span><span>Placar</span><span>Histórico</span><span>Atalhos</span></div>
+            <div class="card__footer"><div class="card__score-preview"><span class="csp__lbl">Suas vitórias</span><span class="csp__val" id="jpWins">–</span></div><div class="card__cta">JOGAR</div></div>
+          </div>
+        </a>
+
+        <a href="Dados/dados.html" class="card card--teal">
+          <div class="card__top"><div class="card__top-glow"></div><div class="card__rings"><span></span><span></span></div><div class="card__emoji" role="img">🎲</div><span class="card__badge">SORTE</span><span class="card__num">02</span></div>
+          <div class="card__body"><h3 class="card__title">Batalha de Dados</h3><p class="card__desc">Lance os dados e veja quem tira o maior número. Animação 3D, rodadas infinitas.</p>
+            <div class="card__tags"><span>Aleatório</span><span>Anim.&nbsp;3D</span><span>Histórico</span></div>
+            <div class="card__footer"><div class="card__score-preview"><span class="csp__lbl">Suas vitórias</span><span class="csp__val" id="dadosWins">–</span></div><div class="card__cta">JOGAR</div></div>
+          </div>
+        </a>
+
+        <a href="caraoucoroa/caraoucoroa.html" class="card card--green">
+          <div class="card__top"><div class="card__top-glow"></div><div class="card__rings"><span></span><span></span></div><div class="card__emoji" role="img">🪙</div><span class="card__badge">CLÁSSICO</span><span class="card__num">03</span></div>
+          <div class="card__body"><h3 class="card__title">Cara ou Coroa</h3><p class="card__desc">A decisão mais antiga do mundo, digitalizada. Escolha seu lado e torça pela moeda.</p>
+            <div class="card__tags"><span>50 / 50</span><span>Streak</span><span>Histórico</span></div>
+            <div class="card__footer"><div class="card__score-preview"><span class="csp__lbl">Suas vitórias</span><span class="csp__val" id="ccWins">–</span></div><div class="card__cta">JOGAR</div></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="sf-brand">NEXUS GAME HUB</div>
+      <p class="sf-copy">Desenvolvido por Erika, Kelvyn e Lucas com HTML5 · CSS3 · JavaScript puro</p>
+    </footer>
+
+    <script>
+      // Atualiza os placares exibidos no menu a partir do localStorage
+      function refreshMenuScores(){
+        try{
+          const jp    = JSON.parse(localStorage.getItem('jp_score')    || '{"wins":0,"total":0}');
+          const dados = JSON.parse(localStorage.getItem('dados_score') || '{"wins":0,"total":0}');
+          const cc    = JSON.parse(localStorage.getItem('cc_score')    || '{"wins":0,"total":0}');
+
+          const jpWinsEl    = document.getElementById('jpWins');
+          const dadosWinsEl = document.getElementById('dadosWins');
+          const ccWinsEl    = document.getElementById('ccWins');
+          const statWinsEl  = document.getElementById('statWins');
+          const statGamesEl = document.getElementById('statGames');
+
+          if(jpWinsEl)    jpWinsEl.textContent    = jp.wins || 0;
+          if(dadosWinsEl) dadosWinsEl.textContent = dados.wins || 0;
+          if(ccWinsEl)    ccWinsEl.textContent    = cc.wins || 0;
+
+          const wins  = (jp.wins || 0) + (dados.wins || 0) + (cc.wins || 0);
+          const total = (jp.total || 0) + (dados.total || 0) + (cc.total || 0);
+          if(statWinsEl)  statWinsEl.textContent  = wins;
+          if(statGamesEl) statGamesEl.textContent = total;
+        }catch(e){ console.error('refreshMenuScores:', e); }
+      }
+
+      // Atualiza ao carregar e quando outro script altera o localStorage
+      refreshMenuScores();
+      window.addEventListener('storage', refreshMenuScores);
+      window.addEventListener('focus', refreshMenuScores);
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

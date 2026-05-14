@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batalha de Dados — ARCADE ZONE</title>
+  <link rel="stylesheet" href="gameshared.css">
+  <link rel="stylesheet" href="dados.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<nav class="navbar">
+  <a href="../parte2.html" class="nb-back">
+    <span class="arrow">◂</span> MENU
+  </a>
+  <div class="nb-title">🎲 BATALHA DE DADOS</div>
+  <a href="../parte2.html" class="nb-brand">◈ ARCADE</a>
+</nav>
+
+<main>
+  <div class="page-hd">
+    <div class="hd-eyebrow">JOGO 02 — SORTE PURA</div>
+    <h1>BATALHA DE DADOS</h1>
+    <div class="hd-sub">◆ MAIOR NÚMERO VENCE ◆</div>
+  </div>
+
+  <!-- SCOREBOARD -->
+  <div class="scoreboard" data-label="◈ PLACAR ◈">
+    <div class="sc-cell">
+      <span class="sc-val v-win"  id="scWins">0</span>
+      <span class="sc-lbl">Vitórias</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-draw" id="scDraws">0</span>
+      <span class="sc-lbl">Empates</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-lose" id="scLoses">0</span>
+      <span class="sc-lbl">Derrotas</span>
+    </div>
+  </div>
+
+  <!-- ARENA -->
+  <div class="arena">
+    <div class="arena-side">
+      <div class="arena-label">▸ VOCÊ</div>
+      <div class="dice-box">
+        <div class="dice" id="playerDice">🎲</div>
+      </div>
+      <div class="dice-num" id="playerNum">–</div>
+    </div>
+    <div class="arena-vs">VS</div>
+    <div class="arena-side">
+      <div class="arena-label">CPU ◂</div>
+      <div class="dice-box">
+        <div class="dice" id="cpuDice">🎲</div>
+      </div>
+      <div class="dice-num" id="cpuNum">–</div>
+    </div>
+  </div>
+
+  <!-- RESULT BANNER -->
+  <div class="result-banner" id="resultBanner"></div>
+
+  <!-- BUTTONS -->
+  <div class="btn-row">
+    <button class="roll-btn" id="rollBtn" onclick="rollDice()">
+      <span class="roll-icon">🎲</span> LANÇAR DADOS
+    </button>
+    <button class="reset-btn" onclick="resetScore()">↺ RESETAR</button>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="history-wrap">
+    <div class="history-hd">HISTÓRICO DE PARTIDAS</div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+  <!-- BOTÃO VOLTAR -->
+  <a href="../parte2.html" class="reset-btn" style="display:block; margin:28px auto 50px; text-decoration:none; text-align:center;">Voltar ao Menu de Jogos</a>
+</main>
+
+<script src="dados.js"></script>
+</body>
+</html>

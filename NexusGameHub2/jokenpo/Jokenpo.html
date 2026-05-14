@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jokenpô — ARCADE ZONE</title>
+  <link rel="stylesheet" href="gameshared.css">
+  <link rel="stylesheet" href="Jokenpo.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<nav class="navbar">
+  <a href="../parte2.html" class="nb-back">
+    <span class="arrow">◂</span> MENU
+  </a>
+  <div class="nb-title">✊ JOKENPÔ</div>
+  <a href="../parte2.html" class="nb-brand">◈ ARCADE</a>
+</nav>
+
+<main>
+  <div class="page-hd">
+    <div class="hd-eyebrow">JOGO 01 — VS CPU</div>
+    <h1>JOKENPÔ</h1>
+    <div class="hd-sub">◆ PEDRA &nbsp;·&nbsp; PAPEL &nbsp;·&nbsp; TESOURA ◆</div>
+  </div>
+
+  <!-- SCOREBOARD -->
+  <div class="scoreboard" data-label="◈ PLACAR ◈">
+    <div class="sc-cell">
+      <span class="sc-val v-win"  id="scWins">0</span>
+      <span class="sc-lbl">Vitórias</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-draw" id="scDraws">0</span>
+      <span class="sc-lbl">Empates</span>
+    </div>
+    <div class="sc-cell">
+      <span class="sc-val v-lose" id="scLoses">0</span>
+      <span class="sc-lbl">Derrotas</span>
+    </div>
+  </div>
+
+  <!-- STREAK -->
+  <div class="streak-bar">
+    <span class="streak-fire">🔥</span>
+    <span class="streak-lbl">Sequência:</span>
+    <span class="streak-val" id="streakVal">0 vitórias</span>
+  </div>
+
+  <!-- ARENA -->
+  <div class="arena">
+    <div class="arena-side">
+      <div class="arena-label">▸ VOCÊ</div>
+      <div class="choice-display" id="playerChoice">❓</div>
+    </div>
+    <div class="arena-vs">VS</div>
+    <div class="arena-side">
+      <div class="arena-label">CPU ◂</div>
+      <div class="choice-display" id="cpuChoice">❓</div>
+    </div>
+  </div>
+
+  <!-- RESULT BANNER -->
+  <div class="result-banner" id="resultBanner"></div>
+
+  <!-- CHOICE BUTTONS -->
+  <div class="choices">
+    <button class="choice-btn" onclick="play('rock')">
+      <span class="choice-key">1</span>
+      <span class="choice-icon">✊</span>
+      <span class="choice-label-txt">Pedra</span>
+    </button>
+    <button class="choice-btn" onclick="play('paper')">
+      <span class="choice-key">2</span>
+      <span class="choice-icon">🖐️</span>
+      <span class="choice-label-txt">Papel</span>
+    </button>
+    <button class="choice-btn" onclick="play('scissors')">
+      <span class="choice-key">3</span>
+      <span class="choice-icon">✌️</span>
+      <span class="choice-label-txt">Tesoura</span>
+    </button>
+  </div>
+
+  <!-- RESET -->
+  <button class="reset-btn" onclick="resetScore()">
+    ↺ &nbsp; RESETAR PLACAR
+  </button>
+
+  <!-- HISTORY -->
+  <div class="history-wrap">
+    <div class="history-hd">HISTÓRICO DE PARTIDAS</div>
+    <div class="history-list" id="historyList"></div>
+  </div>
+
+  <!-- BOTÃO VOLTAR -->
+  <a href="../parte2.html" class="reset-btn" style="display:block; margin:28px auto 50px; text-decoration:none; text-align:center;">Voltar ao Menu de Jogos</a>
+</main>
+
+<script src="Jokenpo.js"></script>
+</body>
+</html>

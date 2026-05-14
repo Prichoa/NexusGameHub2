@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECLADO VIRTUAL · MINI SYNTH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="piano.css" />
+</head>
+<body>
+
+  <!-- ══ BACKGROUND LAYERS ══ -->
+  <div id="gridFloor"></div>
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="eyebrow"><span class="dot"></span>MINI SYNTH<span class="dot"></span></div>
+    <h1 class="page-title">TECLADO VIRTUAL</h1>
+    <p class="page-sub">WEB AUDIO · 7 NOTAS · DÓ → SI</p>
+    <div class="rule"><div class="rule-gem"></div></div>
+  </header>
+
+  <!-- ══ HINT DE TECLAS ══ -->
+  <div class="hint">
+    <span>TECLADO FÍSICO:</span>
+    <span class="hint-key">A</span><span class="hint-key">S</span>
+    <span class="hint-key">D</span><span class="hint-key">F</span>
+    <span class="hint-key">G</span><span class="hint-key">H</span>
+    <span class="hint-key">J</span>
+    <span>— brancas &nbsp;|&nbsp;</span>
+    <span class="hint-key">W</span><span class="hint-key">E</span>
+    <span class="hint-key">T</span><span class="hint-key">Y</span>
+    <span class="hint-key">U</span>
+    <span>— pretas</span>
+  </div>
+
+  <!-- ══ NOTE DISPLAY + VISUALIZER ══ -->
+  <div class="note-display">
+    <div class="nd-box">
+      <span class="nd-label">NOTA</span>
+      <span class="nd-note" id="nd-note">–</span>
+      <span class="nd-freq" id="nd-freq">— Hz</span>
+    </div>
+    <div class="visualizer">
+      <div class="viz-bar" id="b1"></div>
+      <div class="viz-bar" id="b2"></div>
+      <div class="viz-bar" id="b3"></div>
+      <div class="viz-bar" id="b4"></div>
+      <div class="viz-bar" id="b5"></div>
+      <div class="viz-bar" id="b6"></div>
+      <div class="viz-bar" id="b7"></div>
+      <div class="viz-bar" id="b8"></div>
+    </div>
+  </div>
+
+  <!-- ══ WAVEFORM SELECTOR ══ -->
+  <div class="wave-row" id="wave-row">
+    <span class="wave-label">ONDA:</span>
+    <button class="wave-btn sel" data-wave="sine">SINE</button>
+    <button class="wave-btn" data-wave="triangle">TRIÂNGULO</button>
+    <button class="wave-btn" data-wave="square">QUADRADA</button>
+    <button class="wave-btn" data-wave="sawtooth">DENTE DE SERRA</button>
+  </div>
+
+  <!-- ══ PIANO ══ -->
+  <div class="piano-wrap">
+    <div class="piano-container" id="piano">
+      <div class="octave-badge">OITAVA 4</div>
+      <div class="piano-label">
+        <span class="pl-line"></span>
+        MODEL NX-7 · VIRTUAL SYNTHESIZER
+        <span class="pl-line"></span>
+      </div>
+
+      <div class="keys" id="keys">
+        <!-- ── TECLAS BRANCAS ── -->
+        <div class="key-white" data-note="C4" data-key="a">
+          <span class="note-name">Dó</span>
+          <span class="key-bind">A</span>
+        </div>
+        <div class="key-white" data-note="D4" data-key="s">
+          <span class="note-name">Ré</span>
+          <span class="key-bind">S</span>
+        </div>
+        <div class="key-white" data-note="E4" data-key="d">
+          <span class="note-name">Mi</span>
+          <span class="key-bind">D</span>
+        </div>
+        <div class="key-white" data-note="F4" data-key="f">
+          <span class="note-name">Fá</span>
+          <span class="key-bind">F</span>
+        </div>
+        <div class="key-white" data-note="G4" data-key="g">
+          <span class="note-name">Sol</span>
+          <span class="key-bind">G</span>
+        </div>
+        <div class="key-white" data-note="A4" data-key="h">
+          <span class="note-name">Lá</span>
+          <span class="key-bind">H</span>
+        </div>
+        <div class="key-white" data-note="B4" data-key="j">
+          <span class="note-name">Si</span>
+          <span class="key-bind">J</span>
+        </div>
+        <!-- ── TECLAS PRETAS ── -->
+        <div class="key-black key-cs" data-note="C#4" data-key="w">
+          <span class="note-name">C#</span>
+          <span class="key-bind">W</span>
+        </div>
+        <div class="key-black key-ds" data-note="D#4" data-key="e">
+          <span class="note-name">D#</span>
+          <span class="key-bind">E</span>
+        </div>
+        <div class="key-black key-fs" data-note="F#4" data-key="t">
+          <span class="note-name">F#</span>
+          <span class="key-bind">T</span>
+        </div>
+        <div class="key-black key-gs" data-note="G#4" data-key="y">
+          <span class="note-name">G#</span>
+          <span class="key-bind">Y</span>
+        </div>
+        <div class="key-black key-as" data-note="A#4" data-key="u">
+          <span class="note-name">A#</span>
+          <span class="key-bind">U</span>
+        </div>
+      </div><!-- /keys -->
+
+      <div class="piano-base"></div>
+    </div><!-- /piano-container -->
+  </div><!-- /piano-wrap -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       GRAVADOR DE MELODIA
+  ══════════════════════════════════════════════════════════ -->
+  <section class="recorder-section" id="recorder">
+
+    <!-- Cabeçalho da seção -->
+    <div class="rec-section-header">
+      <div class="rule"><div class="rule-gem"></div></div>
+      <div class="eyebrow"><span class="dot"></span>GRAVADOR DE MELODIA<span class="dot"></span></div>
+      <h2 class="rec-main-title">STUDIO</h2>
+      <p class="page-sub">GRAVE · VISUALIZE · EDITE · SALVE</p>
+    </div>
+
+    <!-- Controles do gravador -->
+    <div class="rec-controls">
+      <button id="btn-rec" class="rec-btn rec-btn--rec" title="Iniciar gravação">
+        <span class="rec-icon">●</span> REC
+      </button>
+      <button id="btn-stop" class="rec-btn rec-btn--stop" disabled title="Parar gravação">
+        <span>■</span> STOP
+      </button>
+      <button id="btn-play" class="rec-btn rec-btn--play" disabled title="Reproduzir melodia">
+        <span>▶</span> PLAY
+      </button>
+      <button id="btn-stop-play" class="rec-btn rec-btn--stopplay" disabled title="Parar reprodução">
+        <span>⏹</span> PARAR
+      </button>
+      <button id="btn-clear" class="rec-btn rec-btn--clear" title="Limpar melodia">
+        <span>↺</span> LIMPAR
+      </button>
+
+      <div class="rec-stats">
+        <div class="rec-stat-box">
+          <span class="rec-stat__label">TEMPO</span>
+          <span class="rec-stat__val" id="rec-time">00:00.0</span>
+        </div>
+        <div class="rec-stat-box">
+          <span class="rec-stat__label">NOTAS</span>
+          <span class="rec-stat__val" id="notes-count">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Piano Roll -->
+    <div class="roll-section">
+      <div class="roll-section__label">
+        <span class="dot"></span> PIANO ROLL
+        <span style="font-size:.55rem;color:rgba(255,255,255,.2);margin-left:.5rem;">— CLIQUE EM UMA NOTA PARA DELETÁ-LA</span>
+      </div>
+      <div class="roll-wrapper">
+        <div class="roll-labels" id="roll-labels">
+          <!-- Gerado pelo JS -->
+        </div>
+        <div class="roll-scroll" id="roll-scroll">
+          <div class="roll-area" id="roll-area"></div>
+          <div class="roll-empty" id="roll-empty">
+            <span class="roll-empty__icon">🎵</span>
+            <span>PRESSIONE REC E TOQUE UMA MELODIA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salvar melodia -->
+    <div class="save-row">
+      <input
+        type="text"
+        id="melody-name"
+        class="melody-input"
+        placeholder="NOME DA MELODIA..."
+        maxlength="40"
+      />
+      <button id="btn-save" class="save-btn">
+        <span>💾</span> SALVAR MELODIA
+      </button>
+    </div>
+
+    <!-- Lista de melodias salvas -->
+    <div class="saved-section">
+      <div class="saved-header">
+        <span class="dot"></span>
+        <span class="saved-title">MELODIAS SALVAS</span>
+        <span class="saved-count-badge" id="saved-count">0</span>
+        <span class="dot"></span>
+      </div>
+      <div class="saved-list" id="saved-list">
+        <div class="saved-empty" id="saved-empty">
+          <p class="saved-empty__icon">🎹</p>
+          <p>Nenhuma melodia salva ainda.</p>
+          <p>Grave e salve sua primeira melodia!</p>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /recorder -->
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="sf-brand">MINI<strong>SYNTH</strong> · WEB AUDIO API</div>
+    <div class="sf-copy">CLIQUE NAS TECLAS OU USE O TECLADO FÍSICO · GRAVE · SALVE</div>
+  </footer>
+
+  <!-- Toast de notificação -->
+  <div id="toast"></div>
+
+  <script src="piano.js"></script>
+</body>
+</html>
